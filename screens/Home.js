@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native'
-import { Card } from 'react-native-paper'
+import { Card, FAB } from 'react-native-paper'
 
 
 
@@ -32,23 +32,23 @@ const Home = () => {
         { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
 
     ]
-    const listInfo = ({person}) => {
+    const listInfo = (item) => {
 
-
-        return (<Card style={styles.myCard} >
-            <View style={styles.cardView}>
-                <Image
-                    style={{ width: 70, height: 70, borderRadius: 35 }}
-                    source={{ uri: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80' }}
-                />
-                <View style={{ marginLeft: 10 }}>
-                    <Text style={styles.text}  >
-                        {person.Name}
-                    </Text>
-                    <Text style={{ fontSize: 13, color: "#fff", marginLeft: 5 }}>{person.Position}</Text>
+        return (
+            <Card style={styles.myCard} key={Math.random()}>
+                <View style={styles.cardView}>
+                    <Image
+                        style={{ width: 70, height: 70, borderRadius: 35 }}
+                        source={{ uri: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80' }}
+                    />
+                    <View style={{ marginLeft: 10 }}>
+                        <Text style={styles.text}  >
+                            {item.Name}
+                        </Text>
+                        <Text style={{ fontSize: 13, color: "#fff", marginLeft: 5 }}>{item.Position}</Text>
+                    </View>
                 </View>
-            </View>
-        </Card>
+            </Card>
 
         )
     }
@@ -57,15 +57,24 @@ const Home = () => {
         <View>
             <FlatList
                 data={info}
-                renderItem={(person) => {
-                    return listInfo(person)
+                renderItem={({ item }) => {
+                    return listInfo(item)
                 }}
+                keyExtractor={() => { (Math.random()) }}
             />
+            <FAB 
+            icon="plus"
+            style={styles.fab} 
+            onPress={()=>{info[1].Name="John Cena"}}
+            />
+            
         </View>
     </>)
 
 
-
+    //Either you destructure the data and then pass it to the renderItem() or you
+    //pass the data as it is and destructure it later on in the helper function
+    //as we have done in listInfo()
 
 }
 
@@ -87,6 +96,16 @@ const styles = StyleSheet.create({
         color: "#fff",
 
     },
+    fab: {
+        right: 5,
+        bottom: 5,
+        position: 'absolute',
+        margin: 10,
+        backgroundColor: 'teal'
+
+
+
+    }
 
 
 
