@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         bottom: 5,
         position: 'absolute',
         margin: 10,
-        backgroundColor: 'teal'
+        backgroundColor: 'red'
 
 
 
