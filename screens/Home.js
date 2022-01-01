@@ -1,8 +1,8 @@
+
+
+
 import React from 'react'
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native'
-import { Card, FAB } from 'react-native-paper'
-
-
 
 const Home = () => {
     const info = [
@@ -35,7 +35,7 @@ const Home = () => {
     const listInfo = (item) => {
 
         return (
-            <Card style={styles.myCard} key={Math.random()}>
+            <Card style={styles.myCard} key={Math.random() * Math.random()}>
                 <View style={styles.cardView}>
                     <Image
                         style={{ width: 70, height: 70, borderRadius: 35 }}
@@ -62,12 +62,12 @@ const Home = () => {
                 }}
                 keyExtractor={() => { (Math.random()) }}
             />
-            <FAB 
-            icon="plus"
-            style={styles.fab} 
-            onPress={()=>{info[1].Name="John Cena"}}
+            <FAB
+                icon="plus"
+                style={styles.fab}
+                onPress={() => { info[1].Name = "John Cena" }}
             />
-            
+
         </View>
     </>)
 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         bottom: 5,
         position: 'absolute',
         margin: 10,
-        backgroundColor: 'red'
+        backgroundColor: 'teal'
 
 
 
