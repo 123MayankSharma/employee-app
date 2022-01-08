@@ -3,35 +3,14 @@
 
 import React from 'react'
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native'
+import {FAB,Card} from 'react-native-paper'
 
-const Home = () => {
+const Home = (props) => {
     const info = [
+       
         { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-        { rno: 1, Name: "Mayank Sharma", Position: "SDE-1" },
-
-    ]
+        { rno: 1, Name: "John wayne", Position: "SDE-1" },
+            ]
     const listInfo = (item) => {
 
         return (
@@ -39,7 +18,7 @@ const Home = () => {
                 <View style={styles.cardView}>
                     <Image
                         style={{ width: 70, height: 70, borderRadius: 35 }}
-                        source={{ uri: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80' }}
+                        source={{ uri:"#" }}
                     />
                     <View style={{ marginLeft: 10 }}>
                         <Text style={styles.text}  >
@@ -63,6 +42,7 @@ const Home = () => {
                 keyExtractor={() => { (Math.random()) }}
             />
             <FAB
+              /* onPress={()=>{props.navigation.navigate("Create */
                 icon="plus"
                 style={styles.fab}
                 onPress={() => { info[1].Name = "John Cena" }}
