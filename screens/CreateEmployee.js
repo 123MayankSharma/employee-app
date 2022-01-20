@@ -40,7 +40,7 @@ const CreateEmployee = ({ route, navigation }) => {
 
   //function for creation/submission of new employee info
   const submitData = () => {
-    fetch("http://b1f8-103-92-43-228.ngrok.io/sendData", {
+    fetch("http://0ef7-103-214-61-23.ngrok.io/sendData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const CreateEmployee = ({ route, navigation }) => {
   };
 
   const updateData = () => {
-    fetch("http://b1f8-103-92-43-228.ngrok.io/update", {
+    fetch("http://0ef7-103-214-61-23.ngrok.io/update", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

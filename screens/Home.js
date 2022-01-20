@@ -5,7 +5,6 @@ import {
   View,
   Image,
   FlatList,
-  ActivityIndicator,
   Alert,
 } from "react-native";
 import { FAB, Card } from "react-native-paper";
@@ -15,7 +14,7 @@ const Home = ({ route, navigation }) => {
   const [loadingScreen, setLoadingScreen] = useState(true);
 
   const refreshInfo = () => {
-    fetch("http://b1f8-103-92-43-228.ngrok.io/")
+    fetch("http://0ef7-103-214-61-23.ngrok.io/")
       .then((res) => res.json())
       .then((data) => {
         setInfo(data);

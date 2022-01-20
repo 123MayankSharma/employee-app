@@ -8,7 +8,7 @@ const Profile = ({ route,navigation }) => {
   const { _id, name, photo, phone, salary, email, position } =
     route.params.item;
   const deleteEmployeeInfo = () => {
-    fetch("http://b1f8-103-92-43-228.ngrok.io/delete", {
+    fetch("http://0ef7-103-214-61-23.ngrok.io/delete", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
