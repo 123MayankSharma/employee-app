@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 const port = 8000;
 const Employee = mongoose.model("employee");
 const mongoUrl =
-  "mongodb+srv://ms1903:190310047059@cluster0.y4atc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "insert-mongo-db-credentials";
 
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,

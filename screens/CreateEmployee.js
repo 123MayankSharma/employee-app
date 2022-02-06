@@ -143,9 +143,9 @@ const CreateEmployee = ({ route, navigation }) => {
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "Employee-App");
-    data.append("cloud_name", "dww7sg0ao");
+    data.append("cloud_name", "cloudinary-api-key");
 
-    fetch("https://api.cloudinary.com/v1_1/dww7sg0ao/image/upload", {
+    fetch("insert-cloudinary-api-credentials", {
       method: "post",
       body: data,
     })
